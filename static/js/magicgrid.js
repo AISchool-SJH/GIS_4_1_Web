@@ -283,3 +283,13 @@ let magicGrid = new MagicGrid({
 });
 
 magicGrid.listen();
+
+
+// 레이아웃 배치를 위한 js : img가 load되면 그때그때 자리를 바꿔주는 js코드
+var masonrys = document.getElementsByTagName('img')
+
+for (let i=0; masonrys.length; i++) {
+  masonrys[i].addEventListener('load', function () {
+    magicGrid.positionItems();
+  }, false)
+}
